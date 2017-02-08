@@ -1,9 +1,9 @@
 package Queue;
 
 import java.util.EmptyStackException;
-
-
-
+/**
+@author JSK
+*/
 public class SingleLinkedQueue<T> implements QueueInterface<T> {
 
 	Node front;
@@ -20,9 +20,9 @@ public class SingleLinkedQueue<T> implements QueueInterface<T> {
 	@Override
 	public void enqueue(T newEntry) {
 		// TODO Auto-generated method stub
-		Node n = new Node(newEntry);
-		back.next = n;
-		back = n;
+		Node newNode = new Node(newEntry);
+		back.next = newNode;
+		back = newNode;
 		numberOfEntries++;
 
 	}
@@ -61,18 +61,6 @@ public class SingleLinkedQueue<T> implements QueueInterface<T> {
 	public void clear() {
 		// TODO Auto-generated method stub
 		front.next=null;
-	}
-	public void print() {
-		if (!isEmpty()) {
-			Node a = front.next;
-			for (int i = 0; i < numberOfEntries; i++) {
-				System.out.println(a.data);
-				a = a.next;
-			}
-		}else{
-			System.out.println("Stack is Empty.");
-			throw new EmptyStackException();
-		}
 	}
 
 	class Node {
