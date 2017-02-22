@@ -18,6 +18,20 @@ public class QueueTest {
 		TwoPartCircularLinkedData<Integer> tld = new TwoPartCircularLinkedData<Integer>();
 		tld.enqueue(3);
 		tld.enqueue(5);
-		System.out.println(tld.free.next.data);
+		
+		DoubleEndedQueue<Integer> deq = new DoubleEndedQueue<>();
+		deq.addToFront(1);
+		deq.addToFront(3);
+		System.out.println(deq.front.data);
+		System.out.println(deq.rear.data);
+		deq.addToBack(5);
+		System.out.println(deq.front.data);
+		System.out.println(deq.rear.data);
+		deq.removeFront();
+		System.out.println(deq.front.data);
+		System.out.println(deq.rear.data);
+		deq.removeBack();
+		System.out.println(deq.front.data);
+		System.out.println(deq.rear.data);
 	}
 }
